@@ -40,7 +40,6 @@ header {
   top: 20px;
   right: 20px;
   cursor: pointer;
-  z-index: 1001;
 }
 
 .bar {
@@ -1018,5 +1017,6 @@ body {
   height: 50px;
 
 }
+
 
 
