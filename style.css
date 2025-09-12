@@ -198,7 +198,7 @@ nav a:hover {
 /* 📱 On very small phones: fallback to 2 or 1 item */
 @media (max-width: 480px) {
   .store {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
@@ -1018,4 +1018,5 @@ body {
   height: 50px;
 
 }
+
 
