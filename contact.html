@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title> Fresh Organic Farm</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="jssheet" href="script.js">
+  <style>
+    .hero {
+      background: var(--black);
+      color: var(--white);
+      padding: 100px 10px;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="logo-container">
+      <img src="G:\webiste of fof\images\logo_fresh-removebg-preview.png">
+
+    </div>
+
+
+    <div style="text-align: right; padding: 20px;">
+      <a href="cart.html" target="_blank"
+        style="background: black; color: white; padding: 10px 20px; text-decoration: none; border-radius: 8px;">🛒 View
+        Cart</a>
+    </div>
+
+  </header>
+  <nav class="main-nav">
+  <a href="index.html" class="btn">🏠 Home</a>
+  <a href="product.html" class="btn">Product</a>
+  <a href="login.html" class="btn">Account</a>
+  <a href="about.html" class="btn">About</a>
+  <a href="story.html" class="btn">Story</a>
+  <a href="#vlog" class="btn">Vlog</a>
+</nav>
+
+  <div class="welcome-text" id="welcomeText"></div>
+
+  <section id="home" class="hero">
+    <h2>Welcome to Fresh Organic Farm</h2>
+    <p>Pure, healthy, and delicious dry fruits directly from nature.</p>
+  </section>
+  <section id="contact" class="Contact">
+    <h2 style="text-align: center; color: white;">Contact Us</h2>
+
+    <section id="contact" class="Contact" style="margin-top: 80px;">
+      <div class="contact-container">
+
+        <!-- Contact Form -->
+        <form class="contact-form" onsubmit="sendMessage(); return false;">
+          <input type="text" id="name" placeholder="Your Name" required />
+          <input type="email" id="email" placeholder="Your Email" required />
+          <textarea id="message" placeholder="Your Message" rows="4" required></textarea>
+          <button type="submit">Send</button>
+        </form>
+
+        <!-- Contact Info -->
+        <div class="contact-info">
+          <p><strong>📍 Address:</strong></p>
+          <p>Organic Farm, him city part 1 behind celebration lawn, deva road matiyari chinhat, Lucknow, Uttar Pradesh
+          </p>
+          <p><strong>📞 WhatsApp:</strong> <a href="https://wa.me/919999999999" target="_blank">+91 7394004040</a></p>
+          <p><strong>📧 Email:</strong> <a href="mailto:freshorganic@example.com">freshorganicfarm@info.com</a></p>
+        </div>
+      </div>
+    </section>
+
+
+    <script>
+      function sendMessage() {
+        const name = document.getElementById("name").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const message = document.getElementById("message").value.trim();
+
+        if (!name || !email || !message) {
+          alert("Please fill all the fields.");
+          return;
+        }
+
+        alert(`Thank you, ${name}! Your message has been received.`);
+        document.getElementById("name").value = "";
+        document.getElementById("email").value = "";
+        document.getElementById("message").value = "";
+      }
+    </script>
+
+
+    <!-- Footer Section -->
+    <footer>
+      <footer class="footer">
+        <div class="footer-container">
+          <div class="footer-column">
+            <h3>Download Our App</h3>
+            <p>Get our app for Android and iOS mobile phones.</p>
+            <div class="app-logo">
+              <img src="G:\webiste of fof\images\app logo.png" alt="app-logo" class="app-logo">
+            </div>
+          </div>
+          <div class="footer-column">
+            <img src="G:\webiste of fof\images\last logo fresh farm.jpg" alt="Footer Logo" class="footer-logo">
+            <p>Our purpose is to sustainably make the pleasure and benefits of healthy living accessible to all.</p>
+          </div>
+          <div class="footer-column">
+            <h3>Useful Links</h3>
+            <ul>
+              <li><a href="#">Coupons</a></li>
+              <li><a href="#">Blog Posts</a></li>
+              <li><a href="#">Return Policy</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h3>Follow Us</h3>
+            <ul>
+              <li><a href="#">Facebook</a></li>
+              <li><a href="#">Instagram</a></li>
+              <li><a href="#">Twitter</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          &copy; 2025 Sau Organic Farm. All rights reserved.
+        </div>
+      </footer>
+      <script>
+        document.querySelectorAll('nav a[href^="#"]').forEach(link => {
+          link.addEventListener('click', function (e) {
+            e.preventDefault();
+            const section = document.querySelector(this.getAttribute('href'));
+            if (section) {
+              section.scrollIntoView({ behavior: 'smooth' });
+            }
+          });
+        });
+      </script>
+
+      <script>
+        document.querySelectorAll('.add-to-cart-btn').forEach((btn, index) => {
+          btn.addEventListener('click', () => {
+            const productCards = document.querySelectorAll('.product-card');
+            const card = productCards[index];
+            const name = card.querySelector('.product-title').innerText;
+            const priceText = card.querySelector('.product-price').innerText;
+            const price = parseFloat(priceText.replace(/[^\d.]/g, ''));
+
+            // Load existing cart from localStorage
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+            // Check if item already in cart
+            const existingItem = cart.find(item => item.name === name);
+            if (existingItem) {
+              existingItem.quantity += 1;
+            } else {
+              cart.push({ name, price, quantity: 1 });
+            }
+
+            // Save back to localStorage
+            localStorage.setItem('cart', JSON.stringify(cart));
+
+            alert(`${name} has been added to your cart!`);
+          });
+        });
+      </script>
+      <script>
+  const toggle = document.getElementById('menuToggle');
+  const nav = document.querySelector('.main-nav');
+
+  toggle.addEventListener('click', () => {
+    nav.classList.toggle('active');
+  });
+</script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fresh Organic Farm</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+</head>
+
+<body>
+  <header>
+    <!-- Hamburger Button -->
+    <div class="hamburger" onclick="openSidebar()">&#9776;</div>
+
+    <!-- Dark Overlay -->
+    <div id="overlay" class="overlay" onclick="closeSidebar()"></div>
+
+    <!-- Sidebar Menu -->
+    <div id="sidebar" class="sidebar">
+      <div class="close-btn" onclick="closeSidebar()">×</div>
+      <a href="index.html"><i class="fas fa-home"></i> Home</a>
+      <a href="product.html"> <i class="fas fa-th-large"></i> Products</a>
+      <a href="story.html"><i class="fas fa-book-open"></i> Story</a>
+      <a href="about.html"><i class="fas fa-user-circle"></i> About</a>
+      <a href="contact.html"><i class="fas fa-address-book"></i> Contact</a>
+      <a href="#vlog"><i class="fas fa-blog"></i> Vlog</a>
+      <a href="login.html"><i class="fas fa-user"></i> Account</a>
+    </div>
+  </header>
+  <header>
+    <div class="logo-container">
+      <img src="G:\webiste of fof\images\logo_fresh-removebg-preview.png" alt="Fresh Organic Farm Logo">
+
+    </div>
+    <div style="text-align: center; margin: 30px 20px;">
+      <input type="text" id="searchInput" placeholder="Search products..."
+        style="padding: 10px; width: 250px; border: 2px solid #ccc; border-radius: 8px;" onkeyup="filterProducts()" />
+    </div>
+
+   <script>
+  function filterProducts() {
+    const input = document.getElementById('searchInput').value.toLowerCase();
+    const productCards = document.querySelectorAll('.product-card');
+
+    productCards.forEach(card => {
+      const title = card.querySelector('.product-title').innerText.toLowerCase();
+      card.style.display = title.includes(input) ? 'block' : 'none';
+    });
+  }
+</script>
+
+    <!--------------view cart---------->
+    
+    <div style="text-align: right; padding: 10px; top: 0; transition: 0.3s, color 0.3s;">
+      <a href="cart.html" target="_blank"
+        style="background: black; color: white; padding: 10px 30px; text-decoration: none; border-radius: 10px; transition: 0.3s, color 0.3s;">🛒
+      </a>
+      <span class="cart-item-count"></span>
+    </div>
+  </header>
+  <!-- Navigation Menu -->
+  <nav class="main-nav">
+    <a href="index.html" class="btn"><i class="fas fa-home"></i> Home</a>
+    <a href="product.html" class="btn"><i class="fas fa-th-large"></i> Product</a>
+    <a href="login.html" class="btn"><i class="fas fa-user"></i> Account</a>
+    <a href="about.html" class="btn"><i class="fas fa-user-circle"></i> About</a>
+    <a href="contact.html" class="btn"><i class="fas fa-address-book"></i> Contact</a>
+    <a href="story.html" class="btn"><i class="fas fa-book-open"></i> Story</a>
+    <a href="#vlog" class="btn"><i class="fas fa-blog"></i> Vlog</a>
+  </nav>
+
+  <section id="home" class="hero">
+    <h2>Welcome to Fresh Organic Farm</h2>
+    <p>Pure, healthy, and delicious dry fruits directly from nature.</p>
+  </section>
+  <!--------------offer---------------->
+
+  <section>
+    <div class="offer">
+      <div class="small-container">
+        <div class="row">
+          <div class="col-2">
+            <img src="G:\webiste of fof\images\20-off-title.jpg" class="offer-img">
+          </div>
+          <div class="col-3">
+            <div class="scroll-text">
+              <p>Fast hurry up! Only Limited offer. Order your healthy dry fruits now! 🔥 Hurry! Limited Time Offer -
+                Get 20% OFF on All Dry Fruits 🔥</p>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="our-product-heading">
+    <h2>Our Products</h2>
+  </div>
+
+  <section id="product" class="store">
+
+    <!--  Types of Dry Fruits -->
+    <div class="product-card">
+      <img src="images/premium almonds.jpg" alt="Almonds">
+      <div class="product-title">Premium Almonds</div>
+      <div class="product-weight">500g</div>
+      <div class="product-price">₹499</div>
+      <button class="add-to-cart-btn">Add to Cart</button>
+
+    </div>
+    <div class="product-card">
+      <img src="images/cashews.png" alt="Cashews">
+      <div class="product-title">Cashews</div>
+      <div class="product-weight">500g</div>
+      <div class="product-price">₹499</div>
+      <button class="add-to-cart-btn">Add to Cart</button>
+    </div>
+    <div class="product-card">
+      <img src="images/dates fof.jpg" alt="Dates">
+      <div class="product-title">Dates</div>
+      <div class="product-weight">500g</div>
+      <div class="product-price">₹499</div>
+      <button class="add-to-cart-btn">Add to Cart</button>
+    </div>
+    <div class="product-card">
+      <img src="images/premium raisins.jpg" alt="Green Raisins">
+      <div class="product-title">Green Raisins</div>
+      <div class="product-weight">500g</div>
+      <div class="product-price">₹499</div>
+      <button onclick="addToCart(1, 'Green Raisins', 150, 'images/premium raisins.jpg')">Add to Cart</button>
+
+    </div>
+    <div class="product-card">
+      <img src="images/Figs.jpg" alt="Figs">
+      <div class="product-title">Figs</div>
+      <div class="product-weight">500g</div>
+      <div class="product-price">₹499</div>
+      <button onclick="addToCart(1, 'Figs', 150, 'images/Figs.jpg')">Add to Cart</button>
+    </div>
+    <div class="product-card">
+      <img src="images/peanuts- (1).jpg" alt="Peanuts">
+      <div class="product-title">Peanuts</div>
+      <div class="product-weight">500g</div>
+      <div class="product-price">₹499</div>
+      <button onclick="addToCart(1, 'Peanuts', 150, 'images/peanuts- (1).jpg')">Add to Cart</button>
+    </div>
+    <div class="product-card">
+      <img src="images/raisins-golden--1000x1000 (1).jpg" alt="Golden Raisins">
+      <div class="product-title">Golden Raisins</div>
+      <div class="product-weight">500g</div>
+      <div class="product-price">₹499</div>
+      <button onclick="addToCart(1, 'Golden Raisins', 150, 'images/raisins-golden--1000x1000 (1).jpg')">Add to
+        Cart</button>
+    </div>
+    <div class="product-card">
+      <img src="images/black raisins.jpg" alt="black Raisins">
+      <div class="product-title">Black Raisins</div>
+      <div class="product-weight">500g</div>
+      <div class="product-price">₹499</div>
+      <button onclick="addToCart(1, 'Black Raisins', 150, 'images/black raisins.jpg')">Add to Cart</button>
+
+    </div>
+    <div class="product-card">
+      <img src="images/pista.jpg" alt="pistachio">
+      <div class="product-title">pistachio</div>
+      <div class="product-weight">500g</div>
+      <div class="product-price">₹499</div>
+      <button onclick="addToCart(1, 'pistachio', 150, 'images/pista.jpg')">Add to Cart</button>
+
+    </div>
+    <div class="product-card">
+      <img src="images/walnuts-healthy-Snack-1446133830-770x533.jpg.webp" alt="Walnuts">
+      <div class="product-title">Walnuts</div>
+      <div class="product-weight">500g</div>
+      <div class="product-price">₹499</div>
+      <button onclick="addToCart(1, 'Walnuts', 150, 'images/walnuts-healthy-Snack-1446133830-770x533.jpg.webp')">Add to Cart</button>
+
+    </div>
+    <div class="product-card">
+      <img src="images/download.jpg" alt="Hazelnuts">
+      <div class="product-title">Hazelnuts</div>
+      <div class="product-weight">500g</div>
+      <div class="product-price">₹499</div>
+      <button onclick="addToCart(1, 'Hazelnuts', 150, 'images/download.jpg')">Add to Cart</button>
+
+    </div>
+    <div class="product-card">
+      <img src="images/coconat-powder (1).jpg" alt="Coconuts powder">
+      <div class="product-title">Coconuts powder</div>
+      <div class="product-weight">500g</div>
+      <div class="product-price">₹499</div>
+      <button onclick="addToCart(1, 'coconut-powder', 150, 'images/coconat-powder (1).jpg')">Add to Cart</button>
+
+    </div>
+    <div class="product-card">
+      <img src="images/mm-min-1 (1).jpg" alt="Makhana">
+      <div class="product-title">Makhana</div>
+      <div class="product-weight">500g</div>
+      <div class="product-price">₹499</div>
+      <button onclick="addToCart(1, 'Makhana', 150, 'images/mm-min-1 (1).jpg')">Add to Cart</button>
+
+    </div>
+    <div class="product-card">
+      <img src="images/images (1).jpg" alt="Chia seeds">
+      <div class="product-title">Chia seeds</div>
+      <div class="product-weight">500g</div>
+      <div class="product-price">₹499</div>
+      <button onclick="addToCart(1, 'Chia seeds', 150, 'images/images (1).jpg')">Add to Cart</button>
+
+    </div>
+    <div class="product-card">
+      <img src="images/pumpkin.jpg" alt="pumpkin seeds">
+      <div class="product-title">Pumpkin seeds</div>
+      <div class="product-weight">500g</div>
+      <div class="product-price">₹499</div>
+      <button onclick="addToCart(1, 'Pumpkin seeds', 150, 'images/pumpkin.jpg')">Add to Cart</button>
+
+    </div>
+    <div class="product-card">
+      <img src="images/muskmelon.jpg" alt="muskmelon seeds">
+      <div class="product-title">Muskmelon seeds</div>
+      <div class="product-weight">500g</div>
+      <div class="product-price">₹499</div>
+      <button onclick="addToCart(1, 'Muskmelon seeds', 150, 'images/muskmelon.jpg')">Add to Cart</button>
+
+    </div>
+    <div class="product-card">
+      <img src="images/images (2).jpg" alt="flax seeds">
+      <div class="product-title">Flax seeds</div>
+      <div class="product-weight">500g</div>
+      <div class="product-price">₹499</div>
+      <button onclick="addToCart(1, 'Flax seeds', 150, 'images/images (2).jpg')">Add to Cart</button>
+
+    </div>
+    <div class="product-card">
+      <img src="images/sunflower-seeds-200g-734993 (1).jpg" alt="sunflower seeds">
+      <div class="product-title">Sunflower seeds</div>
+      <div class="product-weight">500g</div>
+      <div class="product-price">₹499</div>
+      <button onclick="addToCart(1, 'Sunflower seeds', 150, 'images/sunflower-seeds-200g-734993 (1).jpg')">Add to Cart</button>
+
+    </div>
+    <div class="product-card">
+      <img src="images/munakka.webp" alt="Munakka">
+      <div class="product-title">Munakka</div>
+      <div class="product-weight">500g</div>
+      <div class="product-price">₹499</div>
+      <button onclick="addToCart(1, 'Munakka', 150, 'images/munakka.webp')">Add to Cart</button>
+
+    </div>
+    <div class="product-card">
+      <img src="images/mix.webp" alt="mix dry fruits">
+      <div class="product-title">Mix Dry Fruits</div>
+      <div class="product-weight">500g</div>
+      <div class="product-price">₹499</div>
+      <button onclick="addToCart(1, 'Mix Dry fruits', 150, 'images/mix.webp')">Add to Cart</button>
+
+    </div>
+    <div class="product-card">
+      <img src="images/2 pack of almonds chawas.webp" alt="pack of 2 almond and Cashews">
+      <div class="product-title">Pack of 2 Almonds and Cashews</div>
+      <div class="product-weight">500g</div>
+      <div class="product-price">₹499</div>
+      <button onclick="addToCart(1, 'Pack of 2 Almonds and Cashews', 150, 'images/2 pack of almonds chawas.webp')">Add to Cart</button>
+    </div>
+    <div class="product-card">
+      <img src="G:\webiste of fof\images\three mix of raisins (1).jpg" alt="mix of 3 raisins">
+      <div class="product-title">Mix of 3 Raisins</div>
+      <div class="product-weight">500g</div>
+      <div class="product-price">₹499</div>
+      <button onclick="addToCart(1, 'Dry Coconut', 150, 'images/dry-coconut.jpg')">Add to Cart</button>
+
+    </div>
+    <div class="product-card">
+      <img src="G:\webiste of fof\images\3 pack of almonds , raisins and chaws (1).jpg"
+        alt="3 pack of almonds , raisins and cashews">
+      <div class="product-title">3 pack of almonds , raisins and cashews</div>
+      <div class="product-weight">500g</div>
+      <div class="product-price">₹499</div>
+      <button onclick="addToCart(1, 'Dry Coconut', 150, 'images/dry-coconut.jpg')">Add to Cart</button>
+
+    </div>
+    <div class="product-card">
+      <img src="G:\webiste of fof\images\small pieces of dry coconuts (1).jpg" alt="small pieces of dry Coconuts">
+      <div class="product-title">Small pieces of dry Coconuts</div>
+      <div class="product-weight">500g</div>
+      <div class="product-price">₹499</div>
+      <button onclick="addToCart(1, 'Dry Coconut', 150, 'images/dry-coconut.jpg')">Add to Cart</button>
+
+    </div>
+  </section>
+  <div style="margin-top: 30px;">
+    <a href="#vlog"
+      style="background-color: black; color: white; padding: 10px 20px; text-decoration: none; border-radius: 8px;">Vlog
+    </a>
+  </div>
+  <section id="vlog" style="padding: 40px; background-color: var(--almond);" class=" Vlog">
+    <h2 style="text-align: center;">Vlog</h2>
+    <p>Watch our journey of sourcing, packing, and delivering the freshest dry fruits. <br>Stay tuned for health tips,
+      recipes, and behind-the-scenes videos.</p>
+  </section>
+
+  <div style="margin-top: 30px;">
+    <a href="#contact"
+      style="background-color: black; color: white; padding: 10px 20px; text-decoration: none; border-radius: 8px;">Contact
+      Us </a>
+  </div>
+
+  <section id="contact" class="Contact">
+    <h2 style="text-align: center;">Contact Us</h2>
+    <div class="contact-container">
+      <!-- Contact Form -->
+      <form class="contact-form" onsubmit="sendMessage(); return false;">
+        <input type="text" id="name" placeholder="Your Name" required />
+        <input type="email" id="email" placeholder="Your Email" required />
+        <textarea id="message" placeholder="Your Message" rows="4" required></textarea>
+        <button type="submit">Send</button>
+      </form>
+
+      <!-- Contact Info -->
+      <div class="contact-info">
+        <p><strong>📍 Address:</strong></p>
+        <p> Organic Farm, him city part 1 behind celebration lawn, deva road matiyari chinhat, Lucknow, Uttar Pradesh
+        </p>
+        <p><strong>📞 WhatsApp:</strong> <a href="https://wa.me/919999999999" target="_blank">+91 7394004040</a></p>
+        <p><strong>📧 Email:</strong> <a href="mailto:freshorganic@example.com">info@freshorganicfarm.com</a></p>
+      </div>
+    </div>
+  </section>
+  <script>
+    function sendMessage() {
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const message = document.getElementById("message").value.trim();
+
+      if (!name || !email || !message) {
+        alert("Please fill all the fields.");
+        return;
+      }
+
+      alert(`Thank you, ${name}! Your message has been received.`);
+      document.getElementById("name").value = "";
+      document.getElementById("email").value = "";
+      document.getElementById("message").value = "";
+    }
+  </script>
+
+
+  <!-- Footer Section -->
+  <footer>
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-column">
+          <h3>Download Our App</h3>
+          <p>Get our app for Android and iOS mobile phones.</p>
+          <div class="app-logo">
+            <img src="G:\webiste of fof\images\app logo.png" alt="app-logo" class="app-logo">
+          </div>
+        </div>
+        <div class="footer-column">
+          <img src="G:\webiste of fof\images\last logo fresh farm.jpg" alt="Footer Logo" class="footer-logo">
+          <p>Our purpose is to sustainably make the pleasure and benefits of healthy living accessible to all.</p>
+        </div>
+        <div class="footer-column">
+          <h3>Useful Links</h3>
+          <ul>
+            <li><a href="#">Coupons</a></li>
+            <li><a href="#">Blog Posts</a></li>
+            <li><a href="#">Return Policy</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Follow Us</h3>
+          <ul>
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">Twitter</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        &copy; 2025 Fresh Organic Farm. All rights reserved.
+      </div>
+    </footer>
+    <script>
+      document.querySelectorAll('nav a[href^="#"]').forEach(link => {
+        link.addEventListener('click', function (e) {
+          e.preventDefault();
+          const section = document.querySelector(this.getAttribute('href'));
+          if (section) {
+            section.scrollIntoView({ behavior: 'smooth' });
+          }
+        });
+      });
+    </script>
+
+    </script>
+    <script>
+      document.querySelectorAll('.add-to-cart-btn').forEach((btn) => {
+        btn.addEventListener('click', function () {
+          const card = this.closest('.product-card');
+          const name = card.querySelector('.product-title').innerText;
+          const priceText = card.querySelector('.product-price').innerText;
+          const price = parseFloat(priceText.replace(/[^\d.]/g, ''));
+          const image = card.querySelector('img').getAttribute('src');
+
+          let cart = JSON.parse(localStorage.getItem("cart")) || [];
+          const existingItem = cart.find(item => item.name === name);
+
+          if (existingItem) {
+            existingItem.quantity += 1;
+          } else {
+            cart.push({ name, price, quantity: 1, image });
+          }
+
+          localStorage.setItem("cart", JSON.stringify(cart));
+          alert(`${name} added to cart!`);
+        });
+      });
+
+    </script>
+
+    </script>
+    <script>
+      function toggleMenu() {
+        const menu = document.getElementById("navMenu");
+        menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+      }
+    </script>
+
+
+    <script>
+      function addToCart(id, name, price, image) {
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+        const existingItem = cart.find(item => item.id === id);
+        if (existingItem) {
+          existingItem.quantity += 1;
+        } else {
+          cart.push({ id, name, price, quantity: 1, image });
+        }
+
+        localStorage.setItem("cart", JSON.stringify(cart));
+        alert(`${name} added to cart!`);
+      }
+
+
+      if (!cartItems || cartItems.length === 0) {
+        document.getElementById('cart-body').innerHTML = `<tr><td colspan="5">Your cart is empty.</td></tr>`;
+        cartTotal.innerText = `Total: ₹0.00`;
+      } else {
+        updateCart();
+      }
+    </script>
+
+    <script>
+      function toggleSidebar() {
+        const sidebar = document.getElementById('sidebar');
+        sidebar.style.width = sidebar.style.width === '250px' ? '0' : '250px';
+      }
+    </script>
+    <script>
+      function openSidebar() {
+        document.getElementById("sidebar").classList.add("active");
+        document.getElementById("overlay").classList.add("active");
+      }
+
+      function closeSidebar() {
+        document.getElementById("sidebar").classList.remove("active");
+        document.getElementById("overlay").classList.remove("active");
+      }
+    </script>
+    <!-- Right Side Cart Panel -->
+    <div id="cartPanel" class="cart-panel">
+      <div class="cart-header">
+        <h3>Your Cart</h3>
+        <button onclick="closeCart()" class="close-cart">×</button>
+      </div>
+      <div id="cartItems" class="cart-items"></div>
+      <div class="cart-total">
+        <strong>Total:</strong> ₹<span id="totalAmount">0.00</span>
+      </div>
+      <div class="cart-actions">
+        <button onclick="checkoutCart()">Checkout</button>
+        <button onclick="closeCart()">Close</button>
+      </div>
+    </div>
+    <div id="cartOverlay" class="cart-overlay" onclick="closeCart()"></div>
+    <script>
+  function openCart() {
+    document.getElementById('cartPanel').classList.add('active');
+    document.getElementById('cartOverlay').classList.add('active');
+    renderCart();
+  }
+
+  function closeCart() {
+    document.getElementById('cartPanel').classList.remove('active');
+    document.getElementById('cartOverlay').classList.remove('active');
+  }
+
+  function addToCart(id, name, price, image) {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const existingItem = cart.find(item => item.id === id);
+    if (existingItem) {
+      existingItem.quantity += 1;
+    } else {
+      cart.push({ id, name, price, quantity: 1, image });
+    }
+    localStorage.setItem("cart", JSON.stringify(cart));
+    openCart();
+  }
+
+  function renderCart() {
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const cartItemsContainer = document.getElementById('cartItems');
+    const totalAmountEl = document.getElementById('totalAmount');
+
+    cartItemsContainer.innerHTML = '';
+    let total = 0;
+
+    if (cart.length === 0) {
+      cartItemsContainer.innerHTML = '<p>Your cart is empty.</p>';
+    } else {
+      cart.forEach(item => {
+        total += item.price * item.quantity;
+        const itemEl = document.createElement('div');
+        itemEl.classList.add('cart-item');
+        itemEl.innerHTML = `
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;">
+            <img src="${item.image}" alt="${item.name}" width="50" height="50" style="object-fit:cover;border-radius:8px;">
+            <div>
+              <strong>${item.name}</strong><br>
+              ₹${item.price} × ${item.quantity}
+            </div>
+          </div>
+        `;
+        cartItemsContainer.appendChild(itemEl);
+      });
+    }
+
+    totalAmountEl.innerText = total.toFixed(2);
+  }
+
+  function checkoutCart() {
+    alert("Proceeding to checkout...");
+    // You can redirect or integrate a payment gateway here
+  }
+</script>
+
+    <!-- Bottom Navigation Bar (Mobile Only) -->
+    <div class="bottom-nav">
+      <a href="index.html">
+        <i class="fas fa-home"></i>
+        <span>Home</span>
+      </a>
+      <a href="search.html">
+        <i class="fas fa-search"></i>
+        <span>Search</span>
+      </a>
+      <a href="product.html">
+        <i class="fas fa-th-large"></i>
+        <span>Shop</span>
+      </a>
+      <a href="login.html">
+        <i class="fas fa-user"></i>
+        <span>Account</span>
+      </a>
+      <a href="cart.html">
+        <i class="fas fa-shopping-cart"></i>
+        <span>Cart</span>
+      </a>
+    </div>
+
+    <!-- WhatsApp Floating Chat Button -->
+    <a href="https://wa.me/919005792239 " class="whatsapp-float" target="_blank">
+      <img src="H:\webiste of fof\images\WhatsApp.svg.webp" alt="Chat with us" />
+    </a>
+    </script>
+    <script src="cart.js"></script>
+</body>
+
+</html>

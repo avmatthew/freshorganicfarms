@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fresh Organic Farm</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="jssheet" href="script.js">
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+    header {
+      background-color: #eff0ea;
+      padding: 20px;
+      text-align: center;
+      border-bottom: 2px solid #ddd;
+    }
+
+    .logo-container img {
+      width: 150px;
+    }
+
+    nav {
+      margin-top: 15px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #080808;
+      margin: 0 10px;
+      font-weight: 600;
+      padding: 8px 14px;
+      border-radius: 6px;
+      transition: 0.3s, color 0.3s;
+    }
+
+    nav a:hover {
+      background-color: #0f0f0f;
+      color: rgb(250, 245, 245);
+    }
+
+    .hero {
+      background: url('https://images.unsplash.com/photo-1582284540856-bcb1d5c8426d') center/cover no-repeat;
+      color: rgb(243, 161, 8);
+      padding: 100px 20px;
+      text-align: center;
+      background-blend-mode: overlay;
+      background-color: rgba(0, 0, 0, 0.9);
+    }
+
+    .hero h2 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 1.2em;
+    }
+
+    section {
+      padding: 40px;
+      background-color: var(--almond);
+      border-radius: 10px;
+      margin: 30px auto;
+      max-width: 1530px;
+      box-shadow: 0 4px 8px rgb(14, 13, 13);
+    }
+
+    section h2 {
+      color: #f8f7f7;
+    }
+
+    section h3 {
+      color: #0a0a0a;
+      font-size: 30px;
+    }
+
+    section ul li {
+      margin-left: 20px;
+    }
+
+    p {
+      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    }
+
+    ul li {
+      margin-bottom: 8px;
+    }
+
+    .footer {
+      background-color: #030303;
+      color: white;
+      padding: 40px 20px;
+      margin-top: 40px;
+    }
+
+    .footer-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    .footer-column {
+      flex: 1 1 220px;
+      margin: 10px;
+    }
+
+    .footer-column h3 {
+      color: #f3ac13;
+    }
+
+    .footer-column ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-column ul li {
+      margin: 8px 0;
+    }
+
+    .footer-column ul li a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .footer-logo,
+    .app-logo {
+      max-width: 100px;
+      margin-top: 10px;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 20px;
+      border-top: 1px solid #ccc;
+      margin-top: 20px;
+    }
+
+    @media (max-width: 768px) {
+      .footer-container {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="logo-container">
+      <img src="G:\webiste of fof\images\logo_fresh-removebg-preview.png" alt="Fresh Organic Farm Logo">
+    </div>
+ <!--------------view cart---------->
+  <div style="text-align: right; padding: 20px;">
+    <a href="cart.html" target="_blank"
+      style="background: black; color: white; padding: 10px 20px; text-decoration: none; border-radius: 8px;">🛒 View
+      Cart</a>
+  </div>
+
+    <script>
+      function filterProducts() {
+        const input = document.getElementById('searchInput').value.toLowerCase();
+        const productCards = document.querySelectorAll('.product-card');
+
+        productCards.forEach(card => {
+          const title = card.querySelector('.product-title').innerText.toLowerCase();
+          card.style.display = title.includes(input) ? 'block' : 'none';
+        });
+      }
+    </script>
+
+  </header>
+  <nav class="main-nav">
+  <a href="index.html" class="btn">🏠 Home</a>
+  <a href="product.html" class="btn">Product</a>
+  <a href="login.html" class="btn">Account</a>
+  <a href="about.html" class="btn">About</a>
+  <a href="story.html" class="btn">Story</a>
+  <a href="#vlog" class="btn">Vlog</a>
+</nav>
+ 
+  <section id="home" class="hero">
+    <h2>Welcome to Fresh Organic Farm</h2>
+    <p>Pure, healthy, and delicious dry fruits directly from nature.</p>
+  </section>
+
+  <section id="about" style="padding: 40px; background-color: var(--white);">
+    <h3>Our Story</h3>
+    <p>At Fresh Organic Farm, we believe in bringing you the finest quality dry fruits sourced directly from trusted
+      farmers. Our mission is to promote a healthy lifestyle through pure and organic nutrition.</p>
+    <p>🌾 Fresh Organic Farm – Brand Story (English Version)</p>
+    <h5>"Where the fields speak, and the soil smiles..."</h5>
+    <p>Fresh Organic Farm wasn’t born from a business idea — it was born from a dream.
+      A dream to bring purity back to the plate, and to let people once again taste the real, fresh, desi (traditional),
+      organic flavors of nature.</p>
+    <p>In today’s fast-paced world, we realized that people want health, but struggle to find trust.
+      To fill that gap of trust, we choose <b>pure soil, native seeds, and honest organic farming.</b></p>
+    <p>In every one of our fields, it’s not just crops that grow —</p>
+    <p><b>trust, hard work, and a deep love for the land also flourish.</b></p>
+    <p>We stay away from chemical fertilizers because we believe —<b>nature is the best healer.</b></p>
+    <p><b>"Pure produce, a healthy world" —</b>this is not just our tagline, it's our philosophy.</p>
+    <p>We truly believe that a healthy society begins with a healthy plate.</p>
+    <p>Every product from Fresh Organic Farm is:</p>
+    <ul>
+      <li><b>100% organic</b></li>
+      <li><b>Grown using traditional Indian methods</b></li>
+      <li><b>Full of natural flavor</b></li>
+      <li>And above all —<b>worthy of your trust.</b></li>
+    </ul>
+    <p>We offer you the same food we feed our own families —</p>
+    <p>Because we believe health should never be compromised —</p>
+    <p><b>not for you, and not for your loved ones.</b></p>
+    <p><b>Fresh Organic Farm – Where every bite carries the sweetness of the soil.</b></p>
+  </section>
+
+  <!-- Footer Section -->
+  <footer>
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-column">
+          <h3>Download Our App</h3>
+          <p>Get our app for Android and iOS mobile phones.</p>
+          <div class="app-logo">
+            <img src="G:\webiste of fof\images\app logo.png" alt="app-logo" class="app-logo">
+          </div>
+        </div>
+        <div class="footer-column">
+          <img src="G:\webiste of fof\images\last logo fresh farm.jpg" alt="Footer Logo" class="footer-logo">
+          <p>Our purpose is to sustainably make the pleasure and benefits of healthy living accessible to all.</p>
+        </div>
+        <div class="footer-column">
+          <h3>Useful Links</h3>
+          <ul>
+            <li><a href="#">Coupons</a></li>
+            <li><a href="#">Blog Posts</a></li>
+            <li><a href="#">Return Policy</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Follow Us</h3>
+          <ul>
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">Twitter</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        &copy; 2025 Sau Organic Farm. All rights reserved.
+      </div>
+    </footer>
+    <script>
+      document.querySelectorAll('nav a[href^="#"]').forEach(link => {
+        link.addEventListener('click', function (e) {
+          e.preventDefault();
+          const section = document.querySelector(this.getAttribute('href'));
+          if (section) {
+            section.scrollIntoView({ behavior: 'smooth' });
+          }
+        });
+      });
+    </script>
+
+
+</body>
+
+</html>

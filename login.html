@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login - Fresh Organic Farm</title>
+  <link rel="stylesheet" href="style.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    .login-container {
+      max-width: 600px;
+      margin: 80px auto;
+      padding: 30px;
+      background: #e69809;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .login-container h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .login-container input {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    .login-container button {
+      width: 100%;
+      padding: 12px;
+      background: #28a745;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+    }
+
+    .login-container button:hover {
+      background: #218838;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="logo-container">
+      <img src="G:\webiste of fof\images\logo_fresh-removebg-preview.png" alt="Fresh Organic Farm Logo">
+
+    </div>
+    <div style="text-align: center; margin: 30px 20px;">
+      <input type="text" id="searchInput" placeholder="Search products..."
+        style="padding: 10px; width: 250px; border: 2px solid #ccc; border-radius: 8px;" onkeyup="filterProducts()" />
+    </div>
+
+    <script>
+      function filterProducts() {
+        const input = document.getElementById('searchInput').value.toLowerCase();
+        const productCards = document.querySelectorAll('.product-card');
+
+        productCards.forEach(card => {
+          const title = card.querySelector('.product-title').innerText.toLowerCase();
+          card.style.display = title.includes(input) ? 'block' : 'none';
+        });
+      }
+    </script>
+    <!--------------view cart---------->
+    <div style="text-align: right; padding: 10px; top: 0; transition: 0.3s, color 0.3s;">
+      <a href="cart.html" target="_blank"
+        style="background: black; color: white; padding: 10px 30px; text-decoration: none; border-radius: 10px; transition: 0.3s, color 0.3s;">🛒
+      </a>
+    </div>
+    <!-- Hamburger Button -->
+    <div class="hamburger" onclick="openSidebar()">&#9776;</div>
+
+    <!-- Dark Overlay -->
+    <div id="overlay" class="overlay" onclick="closeSidebar()"></div>
+
+    <!-- Sidebar Menu -->
+    <div id="sidebar" class="sidebar">
+      <div class="close-btn" onclick="closeSidebar()">×</div>
+      <a href="index.html"><i class="fas fa-home"></i> Home</a>
+      <a href="product.html"> <i class="fas fa-th-large"></i> Products</a>
+      <a href="story.html"><i class="fas fa-book-open"></i> Story</a>
+      <a href="about.html"><i class="fas fa-user-circle"></i> About</a>
+      <a href="contact.html"><i class="fas fa-address-book"></i> Contact</a>
+      <a href="#vlog"><i class="fas fa-blog"></i> Vlog</a>
+      <a href="login.html"><i class="fas fa-user"></i>Account</a>
+    </div>
+
+  </header>
+  <!-- Navigation Menu -->
+  <nav class="main-nav">
+    <a href="index.html" class="btn"><i class="fas fa-home"></i>Home</a>
+    <a href="product.html" class="btn"><i class="fas fa-th-large"></i>Product</a>
+    <a href="login.html" class="btn"><i class="fas fa-user"></i>Account</a>
+    <a href="about.html" class="btn"><i class="fas fa-user-circle"></i>About</a>
+    <a href="contact.html" class="btn"><i class="fas fa-address-book"></i>Contact</a>
+    <a href="story.html" class="btn"><i class="fas fa-book-open"></i>Story</a>
+    <a href="#vlog" class="btn"><i class="fas fa-blog"></i>Vlog</a>
+  </nav>
+
+  <section id="home" class="hero">
+    <h2>Welcome to Fresh Organic Farm</h2>
+    <p>Pure, healthy, and delicious dry fruits directly from nature.</p>
+  </section>
+
+      <div class="login-container">
+    <h2>Login to Your Account</h2>
+    <form onsubmit="handleLogin(event)">
+      <input type="text" id="username" placeholder="Username" required>
+      <input type="password" id="password" placeholder="Password" required>
+      <button type="submit">Login</button>
+    </form>
+  </div>
+ 
+  <script>
+    function handleLogin(e) {
+      e.preventDefault();
+      const username = document.getElementById("username").value.trim();
+      const password = document.getElementById("password").value.trim();
+
+      // Simple check (replace with real auth in production)
+      if (username === "admin" && password === "1234") {
+        alert("Login successful!");
+        window.location.href = "index.html"; // Redirect to home after login
+      } else {
+        alert("Invalid credentials!");
+      }
+    }
+  </script>
+
+  <!-- Footer Section -->
+  <footer>
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-column">
+          <h3>Download Our App</h3>
+          <p>Get our app for Android and iOS mobile phones.</p>
+          <div class="app-logo">
+            <img src="G:\webiste of fof\images\app logo.png" alt="app-logo" class="app-logo">
+          </div>
+        </div>
+        <div class="footer-column">
+          <img src="G:\webiste of fof\images\last logo fresh farm.jpg" alt="Footer Logo" class="footer-logo">
+          <p>Our purpose is to sustainably make the pleasure and benefits of healthy living accessible to all.</p>
+        </div>
+        <div class="footer-column">
+          <h3>Useful Links</h3>
+          <ul>
+            <li><a href="#">Coupons</a></li>
+            <li><a href="#">Blog Posts</a></li>
+            <li><a href="#">Return Policy</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Follow Us</h3>
+          <ul>
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">Twitter</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        &copy; 2025 Sau Organic Farm. All rights reserved.
+      </div>
+    </footer>
+<script>
+      function toggleMenu() {
+        const menu = document.getElementById("navMenu");
+        menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+      }
+    </script>
+     <script>
+      function toggleSidebar() {
+        const sidebar = document.getElementById('sidebar');
+        sidebar.style.width = sidebar.style.width === '250px' ? '0' : '250px';
+      }
+    </script>
+    <script>
+      function openSidebar() {
+        document.getElementById("sidebar").classList.add("active");
+        document.getElementById("overlay").classList.add("active");
+      }
+
+      function closeSidebar() {
+        document.getElementById("sidebar").classList.remove("active");
+        document.getElementById("overlay").classList.remove("active");
+      }
+    </script>
+</body>
+
+</html>
