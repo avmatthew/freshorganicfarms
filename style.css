@@ -30,8 +30,8 @@ header {
 }
 
 .logo-container img {
-  height: 150px;
-  margin-right: 10px;
+  height: 100px;
+  margin-right: 20px;
   align-items: center;
 }
 
@@ -1011,4 +1011,5 @@ body {
 .whatsapp-float img {
   width: 50px;
   height: 50px;
+
 }
